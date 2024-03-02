@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.6 on darwin)" generated="2024-03-02T03:51:59.285163" rpa="false" schemaversion="5">
+<suite id="s1" name="TC1 Positive" source="/Users/monalisanayak/PycharmProjects/TestProject/TestCases/TC1_Positive.robot">
+<test id="s1-t1" name="Verify Adding a ToDo Item" line="12">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:51:59.372610" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2024-03-02T03:51:59.372771" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<arg>Chrome</arg>
+<arg>executable_path="/Users/monalisanayak/Documents/chromedriver_mac_arm64/chromedriver.exe"</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-03-02T03:51:59.372500" elapsed="3.151414"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:02.525866" level="INFO">Opening browser 'Chrome' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
+<msg time="2024-03-02T03:52:02.526513" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-02T03:52:02.525407" elapsed="1.756295"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-03-02T03:52:04.282471" elapsed="0.405412"/>
+</kw>
+<kw name="Create ToDo Item">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:04.689023" level="INFO">Clicking element 'xpath://*[@id="todo-input"]'.</msg>
+<arg>${input_field_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-02T03:52:04.688608" elapsed="0.052482"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:04.741415" level="INFO">Typing text 'Test1' into text field 'xpath://*[@id="todo-input"]'.</msg>
+<arg>${input_field_locator}</arg>
+<arg>${item}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-02T03:52:04.741233" elapsed="0.091716"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:04.836187" level="INFO">Sending key(s) ('ENTER',) to xpath://*[@id="todo-input"] element.</msg>
+<msg time="2024-03-02T03:52:05.099633" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-03-02T03:52:05.099693" level="INFO">Releasing special key ENTER.</msg>
+<arg>${input_field_locator}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-03-02T03:52:04.833100" elapsed="0.306699"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-02T03:52:10.141291" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-02T03:52:05.139960" elapsed="5.001604"/>
+</kw>
+<arg>Test1</arg>
+<status status="PASS" start="2024-03-02T03:52:04.688297" elapsed="5.453611"/>
+</kw>
+<kw name="Validate ToDo Item">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:10.160233" level="INFO">Element 'xpath=//*[@id="root"]/main/ul/li/div/label' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-02T03:52:10.143562" elapsed="0.016739"/>
+</kw>
+<arg>${added_element_locator}</arg>
+<status status="PASS" start="2024-03-02T03:52:10.142530" elapsed="0.017841"/>
+</kw>
+<doc>Validate that a to-do item can be added</doc>
+<tag>Positive</tag>
+<status status="PASS" start="2024-03-02T03:51:59.371768" elapsed="10.788732"/>
+</test>
+<test id="s1-t2" name="Validate Product Listing" line="25">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:10.161035" level="INFO">Clicking element 'xpath=//*[@id="root"]/footer/ul/li[2]/a'.</msg>
+<arg>${active_tab_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-02T03:52:10.160907" elapsed="0.027520"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:10.207837" level="INFO">Element 'xpath=//*[@id="root"]/main/ul/li/div/label' is displayed.</msg>
+<arg>${added_element_locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-02T03:52:10.188599" elapsed="0.019391"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:10.208704" level="INFO">Clicking element 'xpath=//*[@id="root"]/footer/ul/li[1]/a'.</msg>
+<arg>${all_tab_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-02T03:52:10.208389" elapsed="0.022671"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:10.239224" level="INFO">Element 'xpath=//*[@id="root"]/main/ul/li/div/label' is displayed.</msg>
+<arg>${added_element_locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-02T03:52:10.231224" elapsed="0.008067"/>
+</kw>
+<doc>Validate that a newly added to do is listed under active tab</doc>
+<tag>Positive</tag>
+<status status="PASS" start="2024-03-02T03:52:10.160652" elapsed="0.078780"/>
+</test>
+<test id="s1-t3" name="Verify added item and can be checked" line="41">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:10.239918" level="INFO">Clicking element 'xpath=//*[@id="root"]/main/ul/li[1]/div/input'.</msg>
+<arg>${todo_item_checkbox_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-02T03:52:10.239789" elapsed="0.026036"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:10.266183" level="INFO">Clicking element 'xpath=//*[@id="root"]/footer/ul/li[3]/a'.</msg>
+<arg>${completed_tab_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-02T03:52:10.266016" elapsed="0.022809"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-02T03:52:12.289672" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-02T03:52:10.289023" elapsed="2.000925"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-03-02T03:52:12.291111" level="INFO">${actual_value} = Test1!</msg>
+<var>${actual_value}</var>
+<arg>Test1!</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-03-02T03:52:12.290577" elapsed="0.000612"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_value}</arg>
+<arg>Test1!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-02T03:52:12.291576" elapsed="0.000835"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:12.293098" level="INFO">Clicking element 'xpath=//*[@id="root"]/footer/ul/li[2]/a'.</msg>
+<arg>${active_tab_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-02T03:52:12.292712" elapsed="0.025102"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:12.321809" level="INFO">Element 'xpath=//*[@id="root"]/main/ul/li/div/label' did not exist.</msg>
+<arg>${added_element_locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-03-02T03:52:12.318030" elapsed="0.003844"/>
+</kw>
+<doc>Validate that added to do can be selected</doc>
+<tag>Positive</tag>
+<status status="PASS" start="2024-03-02T03:52:10.239558" elapsed="2.082461"/>
+</test>
+<test id="s1-t4" name="Verify Clearing Completed Tasks" line="61">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:12.322767" level="INFO">Clicking element 'xpath=//*[@id="root"]/footer/button'.</msg>
+<arg>${clear_completed_tab_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-02T03:52:12.322475" elapsed="0.023709"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-02T03:52:14.348094" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-02T03:52:12.346416" elapsed="2.001940"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:14.357917" level="INFO">Element 'xpath=//*[@id="root"]/footer/ul/li[3]/a' did not exist.</msg>
+<arg>${completed_tab_locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-03-02T03:52:14.348939" elapsed="0.009045"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:14.363831" level="INFO">Element 'xpath=//*[@id="root"]/main/ul/li/div/input' did not exist.</msg>
+<arg>${todo_item_list_view_locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-03-02T03:52:14.358137" elapsed="0.005760"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:14.369079" level="INFO">${itemCount} = 0</msg>
+<var>${itemCount}</var>
+<arg>${todo_element_count_locator}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-03-02T03:52:14.364066" elapsed="0.005038"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-03-02T03:52:14.369357" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${itemCount}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-03-02T03:52:14.369249" elapsed="0.000140"/>
+</kw>
+<doc>Validate the clear completed would wipe out all the completed task and completed task would be empty</doc>
+<tag>Positive</tag>
+<status status="PASS" start="2024-03-02T03:52:12.322147" elapsed="2.047327"/>
+</test>
+<test id="s1-t5" name="Verify edit action on added item" line="78">
+<kw name="Create ToDo Item">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:14.370049" level="INFO">Clicking element 'xpath://*[@id="todo-input"]'.</msg>
+<arg>${input_field_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-02T03:52:14.369954" elapsed="0.018508"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:14.389099" level="INFO">Typing text 'test1' into text field 'xpath://*[@id="todo-input"]'.</msg>
+<arg>${input_field_locator}</arg>
+<arg>${item}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-02T03:52:14.388698" elapsed="0.026060"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:14.415166" level="INFO">Sending key(s) ('ENTER',) to xpath://*[@id="todo-input"] element.</msg>
+<msg time="2024-03-02T03:52:14.680323" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-03-02T03:52:14.680377" level="INFO">Releasing special key ENTER.</msg>
+<arg>${input_field_locator}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-03-02T03:52:14.414925" elapsed="0.269161"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-02T03:52:19.686388" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-02T03:52:14.684262" elapsed="5.002396"/>
+</kw>
+<arg>test1</arg>
+<status status="PASS" start="2024-03-02T03:52:14.369825" elapsed="5.317113"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:19.688057" level="INFO">Clicking element 'xpath=//*[@id="root"]/footer/ul/li[1]/a'.</msg>
+<arg>${all_tab_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-02T03:52:19.687446" elapsed="0.028551"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:19.724953" level="INFO">Element 'xpath=//*[@id="root"]/main/ul/li/div/label' is displayed.</msg>
+<arg>${added_element_locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-02T03:52:19.716176" elapsed="0.008846"/>
+</kw>
+<kw name="Double Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:19.725334" level="INFO">Double clicking element 'xpath=//*[@id="root"]/main/ul/li/div/label'.</msg>
+<arg>${added_element_locator}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-02T03:52:19.725185" elapsed="0.268802"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-03-02T03:52:19.994472" level="INFO">Sending key(s) ('BACKSPACE', 'ENTER') to xpath=//*[@id="root"]/main/ul/li[1]/div/div element.</msg>
+<msg time="2024-03-02T03:52:20.268222" level="INFO">Pressing special key BACKSPACE to element.</msg>
+<msg time="2024-03-02T03:52:20.268378" level="INFO">Releasing special key BACKSPACE.</msg>
+<msg time="2024-03-02T03:52:20.274608" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-03-02T03:52:20.274661" level="INFO">Releasing special key ENTER.</msg>
+<arg>${todo_element_edit_field_locator}</arg>
+<arg>BACKSPACE</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-03-02T03:52:19.994177" elapsed="0.283117"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-03-02T03:52:20.277453" elapsed="0.071348"/>
+</kw>
+<doc>Validate the edit functionality when double click on the item</doc>
+<tag>Positive</tag>
+<status status="PASS" start="2024-03-02T03:52:14.369593" elapsed="5.979382"/>
+</test>
+<status status="PASS" start="2024-03-02T03:51:59.286505" elapsed="21.062736"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">Positive</stat>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="TC1 Positive">TC1 Positive</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
