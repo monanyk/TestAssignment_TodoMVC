@@ -57,4 +57,19 @@ This framework is created using Robot framework and selenium libraries
 ##Note
   taking screenshot and video can also be captured through the script but here in this implementation that is not added.
 
+## what is being tested 
+
+- Positive scenarios:
+  1.add new item to do list
+  2.validating all the tabs
+  3. Validating the completing a to do item scenarios
+  4.Clear completion functionality validation
+  5.Edit functionality of the to do item
+
+- Negetive scenarios:
+  1. Boundry value analysis done including space and minimum value to maximum value input
+  2. Special character as input
+  3. only space as input
+
+This approach is taken as for any input field validation boundry value analysis is very important and most of the corner cases can be found there.
 
